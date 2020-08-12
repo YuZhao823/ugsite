@@ -1,0 +1,12 @@
+# data file separate content from source code to make the site easier to maintain
+# Jekyll makes this data file available at site.data.navigation
+- name: Home
+  link: /
+- name: Blog
+  link: /blog.html
+- name: Category
+  link: /category.html
+- name: Staff
+  link: /staff.html
+- name: Contact
+  link: /contact.html
