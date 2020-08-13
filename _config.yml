@@ -1,6 +1,8 @@
 collections:
   authors:
     output: true
+  category:
+    output: true
 
 defaults:
   - scope:
@@ -17,6 +19,11 @@ defaults:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: "categories"
 
 # Welcome to Jekyll!
 #

@@ -6,7 +6,7 @@ title: Blog
 <ul>
     {% for post in site.posts %}
     <li>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
         <!-- post.excerpt is the first paragraph of content by default -->
         <h3>{{ post.author }}</h3>
         {{ post.excerpt }}

@@ -1,0 +1,32 @@
+---
+layout: default
+title: Categories
+---
+
+<!-- <div class="collapse navbar-collapse" id="bs-nav-demo">
+    <ul class="nav navbar-nav">
+        {% for item in site.data.category %}
+        <li>
+            <a href="{{ site.baseurl }}{{ item.link }}" >
+            {{ item.name }}
+        </a>  
+        </li>
+        {% endfor %}
+    </ul>
+</div> -->
+
+<div class="container">
+    {% for item in site.data.category %}
+    <h3>{{item.name}}</h3>
+    <ul>
+        {% assign filtered_posts = site.posts | where: 'category', item.name %}
+        {% for post in filtered_posts %}
+        <li>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    
+    </ul>
+    {% endfor %}
+    
+</div>
