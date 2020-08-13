@@ -4,4 +4,4 @@ title: Home
 ---
 <!-- {{page.my_number}} -->
 
-        <h1>{{"Hello World" | downcase }}</h1>
+# Hello World
