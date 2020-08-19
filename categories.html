@@ -1,20 +1,50 @@
 ---
-layout: default
+
 title: Categories
 ---
 
-<!-- <div class="collapse navbar-collapse" id="bs-nav-demo">
-    <ul class="nav navbar-nav">
-        {% for item in site.data.category %}
-        <li>
-            <a href="{{ site.baseurl }}{{ item.link }}" >
-            {{ item.name }}
-        </a>  
+
+
+
+<!-- Solution 1 -->
+
+<!-- Button Version -->
+
+<div>
+    <h1>Categories</h1>
+    <ul id="demo" class="categories-toc-ul collapse">
+    
+    {% for category in site.data.category %}
+    <div class="category-button-wrapper">
+        <li class="category-button">
+            <a href="{{ site.baseurl }}{{ category.url }}">{{ category.name }}</a>
         </li>
-        {% endfor %}
+    </div>
+    {% endfor %}
     </ul>
+
+    <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+</div>
+
+
+<!-- Panel Version -->
+<!-- <div class="panel panel-default">
+
+    {% for item in site.data.category %}
+
+    <div class="panel-heading">
+        <h3 class="panel-title"><a href="{{ site.baseurl }}{{ category.url }}">{{ item.name }}</a></h3>
+    </div>
+
+    <div class="panel-body">
+        {{ item.des }}
+    </div>
+
+    {% endfor %}
+
 </div> -->
 
+<!-- Solution 2 -->
 <div class="container">
     {% for item in site.data.category %}
     <h3>{{item.name}}</h3>
@@ -25,8 +55,8 @@ title: Categories
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </li>
         {% endfor %}
-    
+
     </ul>
     {% endfor %}
-    
+
 </div>
