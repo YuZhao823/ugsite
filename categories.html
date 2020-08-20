@@ -10,20 +10,19 @@ title: Categories
 
 <!-- Button Version -->
 
-<div>
+<div class="container">
     <h1>Categories</h1>
-    <ul id="demo" class="categories-toc-ul collapse">
-    
+    <ul class="categories-toc-ul row">
     {% for category in site.data.category %}
-    <div class="category-button-wrapper">
+    <div class="category-button-wrapper col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <li class="category-button">
-            <a href="{{ site.baseurl }}{{ category.url }}">{{ category.name }}</a>
+            <!-- TODO: makes sure category names are unique -->
+            <!-- space in category name should be replaced with '-' -->
+            <a href="#{{ category.name | replace: " ", "-"}}">{{ category.name }}</a>
         </li>
     </div>
     {% endfor %}
     </ul>
-
-    <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
 </div>
 
 
@@ -47,16 +46,22 @@ title: Categories
 <!-- Solution 2 -->
 <div class="container">
     {% for item in site.data.category %}
+    <div id={{item.name | replace: ' ', '-' }} class="category-list">
     <h3>{{item.name}}</h3>
     <ul>
         {% assign filtered_posts = site.posts | where: 'category', item.name %}
         {% for post in filtered_posts %}
         <li>
-            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <div class="category-list-item">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                <a href="#">{{ post.author }}</a>
+                <span>{{ post.date }}</span>
+            </div>
         </li>
         {% endfor %}
-
     </ul>
+    <a href="#" class="back-to-top-link">[Back To Top]</a>
+    </div>
     {% endfor %}
 
 </div>

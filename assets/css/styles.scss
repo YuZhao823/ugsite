@@ -2,14 +2,63 @@
 ---
 @import "main";
 
+$link-color: #0077CC;
+
 body {
     padding-top: 70px;
     
 }
 
-.categories-toc-ul {
-    margin: 0 auto;
+// Navigation Bar ===========================================================================
 
+// Top Bar
+.navbar.navbar-fixed-top {
+    background-color: #78D1FD;
+    color: black;
+}
+
+.navbar-brand {
+    color: black
+}
+
+.navbar-brand:hover {
+    color: #F9C22E
+}
+
+.navbar-nav > li > a {
+    color: black
+}
+
+.navbar-nav > li > a:hover {
+    background-color: transparent;
+    color: #F9C22E
+}
+
+// Bottom Bar
+.navbar.navbar-fixed-bottom {
+    background-color: #2D232E;
+}
+
+.navbar-text {
+    color: #C7D3D8
+}
+
+// Sub Navigation Bar
+// TODO: Sub Navbar doesn't work in the current situation
+.sub-navbar {
+    background-color: green; 
+    position: fixed; 
+    
+    top: 51px !important;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+// Category  ===========================================================================
+
+.categories-toc-ul {
+    padding: 0;
 }
 
 .category-button-wrapper {
@@ -17,15 +66,17 @@ body {
 }
 
 .category-button {
-    width: 200px;
     height: 60px;
-
+    width: 100%;
     // Text Style
     display: table;
     text-align: center;    
     border: 1px lightgray solid;
     border-radius: 4px;
     margin: 5px;
+    padding: 5px;
+    
+    box-shadow: 0 3px 4px #86868642;
 }
 
 .category-button:hover {
@@ -40,35 +91,26 @@ body {
 }
 
 .category-button a:hover {
+    color: $link-color;
     text-decoration: none;
 }
 
-@media only screen and (max-width: 710px) {
-    .category-button {
-        width: 160px;
-    }
+.category-list h3 {
+    padding-top: 60px;
 }
 
-@media only screen and (max-width: 600px) {
+.back-to-top-link {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
 
-    .category-button-wrapper {
-        display: block;
-    }
+.back-to-top-link i {
+   margin: auto;
+   vertical-align: middle; 
+   display: inline-block;
+} 
 
-    .category-button {
-        width: auto;
-        height: auto;
-        border: none;
-        text-align: left;
-    }
+.category-list-item {
 
-    .category-button a {
-        display: inline;
-        margin: 0;
-        color: #363636;
-    }
-    
-    .category-button a:hover {
-        text-decoration: none;
-    }
 }
