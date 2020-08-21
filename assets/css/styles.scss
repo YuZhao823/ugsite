@@ -3,17 +3,23 @@
 @import "main";
 
 $link-color: #0077CC;
+$top-navbar-background: #248232;
 
 body {
     padding-top: 70px;
     
+
 }
+
+
+
+
 
 // Navigation Bar ===========================================================================
 
 // Top Bar
 .navbar.navbar-fixed-top {
-    background-color: #78D1FD;
+    background-color: $top-navbar-background;
     color: black;
 }
 
@@ -39,6 +45,7 @@ body {
     background-color: #2D232E;
     margin: 0;
     border-radius: 0;
+  
 }
 
 .navbar-text {
