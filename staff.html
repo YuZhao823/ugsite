@@ -1,20 +1,29 @@
 ---
 title: Staff
 ---
-<h2>Staff</h2>
+<div class="container">
+    <h1>Staff</h1>
 
-<ul>
-    {% for author in site.authors %}
-    <li>
-        <h3><a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a></h3>
-        <h4>{{ author.position }}</h4>
-        <!-- markdownify: convert md-formatted string into HTML -->
-        <p>{{ author.content | markdownify }}</p>
-    </li>
-    {% endfor %}
-
-</ul>
-
-
-
-
+    <ul class="staff-list row auto-clear">
+        {% for author in site.authors %}
+        <li class="staff-info col-lg-6 col-md-6 col-sm-6">
+            <h3>{{ author.name }}</a></h3>
+            <!-- markdownify: convert md-formatted string into HTML -->
+            <p>{{ author.content | markdownify }}</p>
+            <h6 class="text-uppercase">Recent Posts<h6>
+            {% assign filtered_posts = site.posts | where: 'author', author.short_name %}
+            <div class="row auto-clear">
+            {% for post in filtered_posts %}
+            <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <!-- TODO: only show 3 posts -->
+                <p class="staff-list-post-date">{{ post.date | date: "%d %B, %Y" }}</p>
+                <h5 class="staff-list-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
+            </li>
+            {% endfor %}
+            </div>
+        <a href="{{ site.baseurl }}{{ author.url }}">See All Posts</a>
+        </li>
+        {% endfor %}
+    
+    </ul>
+</div>

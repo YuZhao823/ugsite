@@ -55,8 +55,48 @@ body {
     z-index: 1030;
 }
 
-// Category  ===========================================================================
+// Blog  ===============================================================================
 
+.post-excerpt-list {
+    padding-left: 0;
+}
+
+.post-excerpt-item {
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post-date{
+    
+
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: normal;
+    color:black;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.post-title h4 {
+    max-width: 800px;
+}
+
+.post-author{
+    margin-top: 10px;
+    font-weight: normal;
+    font-size:16px;
+
+}
+
+.post-excerpt-content {
+    font-size: 16px;
+    color:#4d4c4c;
+}
+
+// Category  ===========================================================================
 .categories-toc-ul {
     padding: 0;
 }
@@ -111,6 +151,125 @@ body {
    display: inline-block;
 } 
 
-.category-list-item {
+.article-list {
+    list-style: none;
+    padding-left: 0;
+}
 
+
+// @media only screen and (min-width: 991px) {
+//     .category-list-container {
+//         padding: 0 100px;
+//     }
+// }
+
+.category-list-item {
+    margin: 1em 0;
+    
+}
+
+.category-list-article-title {
+    vertical-align: top;
+    font-weight: normal;
+    margin: 0;   
+    padding: 0;
+}
+
+.category-list-article-meta {
+    text-align: right;
+    padding: 0;
+}
+
+.category-list-article-date {
+    color: #999
+}
+
+// Clearfix extension
+
+@media (min-width:1200px){
+    .auto-clear .col-lg-1:nth-child(12n+1){clear:left;}
+    .auto-clear .col-lg-2:nth-child(6n+1){clear:left;}
+    .auto-clear .col-lg-3:nth-child(4n+1){clear:left;}
+    .auto-clear .col-lg-4:nth-child(3n+1){clear:left;}
+    .auto-clear .col-lg-6:nth-child(odd){clear:left;}
+}
+@media (min-width:992px){
+    .auto-clear .col-md-1:nth-child(12n+1){clear:left;}
+    .auto-clear .col-md-2:nth-child(6n+1){clear:left;}
+    .auto-clear .col-md-3:nth-child(4n+1){clear:left;}
+    .auto-clear .col-md-4:nth-child(3n+1){clear:left;}
+    .auto-clear .col-md-6:nth-child(odd){clear:left;}
+}
+@media (min-width:768px){
+    .auto-clear .col-sm-1:nth-child(12n+1){clear:left;}
+    .auto-clear .col-sm-2:nth-child(6n+1){clear:left;}
+    .auto-clear .col-sm-3:nth-child(4n+1){clear:left;}
+    .auto-clear .col-sm-4:nth-child(3n+1){clear:left;}
+    .auto-clear .col-sm-6:nth-child(odd){clear:left;}
+}
+@media (max-width:767px){
+    .auto-clear .col-xs-1:nth-child(12n+1){clear:left;}
+    .auto-clear .col-xs-2:nth-child(6n+1){clear:left;}
+    .auto-clear .col-xs-3:nth-child(4n+1){clear:left;}
+    .auto-clear .col-xs-4:nth-child(3n+1){clear:left;}
+    .auto-clear .col-xs-6:nth-child(odd){clear:left;}
+}
+
+// Staff ====================================================================================
+
+.staff-list {
+    list-style: none;
+    padding: 0;
+}
+
+.staff-info {
+    // border-bottom: 1px solid lightgrey;
+}
+
+.staff-list-post-date {
+    color: #999;
+    margin-bottom: 0px;
+}
+
+.staff-list-post-title {
+    margin-top: 5px;
+}
+
+// Post / Article
+
+.article-categories {
+    margin-top: 20px;
+}
+
+.article-categories {
+    color: #999
+}
+
+.article-title {
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.article-author-link {
+    font-size: 1.5em;
+}
+
+.article-download-link {
+    padding: 8px 25px;
+}
+
+.article-date {
+    font-size: 18px;
+    // color: 
+}
+
+.article-content {
+    font-size: 18px;
+}
+
+// Questionaire ==========================================================================================
+
+.questionaire-list {
+    list-style: none;
+    padding-left: 0;
 }

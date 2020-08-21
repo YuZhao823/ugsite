@@ -1,34 +1,10 @@
 - name: Fruit
-  des: This category contains articles about fruit.
+  description: This category contains articles about fruit.
 - name: Tool
-  des: This category contains articles about tool.
+  description: This category contains articles about tool.
 - name: Plant
-  des: This category contains articles about plant.
+  description: This category contains articles about plant.
 - name: Costume
-  des: This category contains articles about costume.
+  description: This category contains articles about costume.
 - name: Test
-  des: This category contains articles about costume.
-- name: A Longer NameC ategory
-  des: This category contains articles about costume.
-- name: Test
-  des: This category contains articles about costume.
-- name: Test
-  des: This category contains articles about costume.
-- name: A Longer Name Category
-  des: This category contains articles about costume.
-- name: Test
-  des: This category contains articles about costume.
-- name: A Longer Name Category
-  des: This category contains articles about costume.
-- name: Test
-  des: This category contains articles about costume.
-- name: Pneumono­ultra­microscopic­silico­volcano­coniosis
-  des: This category contains articles about costume.
-- name: Test
-  des: This category contains articles about costume.
-- name: A Longer Name Category
-  des: This category contains articles about costume.
-- name: A Longer Name Category
-  des: This category contains articles about costume.
-- name: A Longer Name Category
-  des: This category contains articles about costume.
+  description: This category contains articles about costume.

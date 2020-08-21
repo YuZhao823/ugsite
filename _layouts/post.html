@@ -1,22 +1,36 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
 
-{% if page.filename %}
-<a href="{{ site.baseurl }}/downloads/{{ page.filename }}">Download File</a>
-{% endif %}
+<!-- Article Categories -->
 
-<p>
+<!-- TODO: Add Blog Category List Links -->
+<p class="article-categories">
+    <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
     <!-- add some styles here -->
     {{ page.category }}
-    {{ page.date | date_to_string }}
-    {% assign author = site.authors | where: 'short_name', page.author | first %}
-    {% if author %}
-    - <a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
-    {% endif %}
 </p>
 
+<!-- Article Title -->
+<h1 class="article-title">{{ page.title }}</h1>
+
+<!-- Article Author -->
+{% assign author = site.authors | where: 'short_name', page.author | first %}
+{% if author %}
+    <a class="article-author-link" href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
+{% endif %}
+
+<!-- Article Date -->
+<p class="article-date">{{ page.date | date: '%b %d, %Y' }}</p>
+
+<!-- Download File Link -->
+{% if page.filename %}
+<a class="btn btn-primary article-download-link" href="{{ site.baseurl }}/downloads/{{ page.filename }}" role="button">Download</a>
+{% endif %}
 
 
+<hr />
+
+<div class="article-content">
 {{ content }}
+</div>

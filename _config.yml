@@ -3,6 +3,8 @@ collections:
     output: true
   category:
     output: true
+  questionnaires:
+    output: true
 
 defaults:
   - scope:

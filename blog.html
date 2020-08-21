@@ -1,16 +1,30 @@
 ---
 title: Blog
 ---
-<h2>Latest Posts</h2>
+<div class="container">
+    <h1>Blog</h1>
+    <ul class="post-excerpt-list">
+        {% for post in site.posts %}
+        
+            <li class="post-excerpt-item">    
+                <p class="post-date">
+                    {{ post.date | date: "%d %B, %Y" }}
+                </p>
+                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}"><h4>{{ post.title }}</h4></a>
+                <!-- post.excerpt is the first paragraph of content by default -->
+                {% assign author_name = site.authors | where: 'short_name', post.author | first %}
+                {% if author_name %}
+                <p class="post-author">{{ author_name.name }}</p>
+                {% endif %}
+                <p class="post-excerpt-content">{{ post.content_desc }}</p>
+                
+            </li>
+        
+       
+        <hr>
+        {% endfor %}
+    
+    </ul>
 
-<ul>
-    {% for post in site.posts %}
-    <li>
-        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-        <!-- post.excerpt is the first paragraph of content by default -->
-        <h3>{{ post.author }}</h3>
-        {{ post.excerpt }}
-    </li>
-    {% endfor %}
+</div>
 
-</ul>
