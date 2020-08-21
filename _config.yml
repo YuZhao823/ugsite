@@ -27,6 +27,9 @@ defaults:
     values:
       layout: "categories"
 
+paginate: 3
+paginate_path: "/blog_paginator/page:num/"
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -58,6 +61,7 @@ markdown: kramdown
 # theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

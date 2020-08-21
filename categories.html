@@ -10,10 +10,10 @@ title: Categories
 
 <!-- Button Version -->
 
-<div class="container-fluid">
-    <h1>Categories</h1>
-    <!-- TODO: add spacing after categories title -->
-    <ul class="categories-toc-ul row">
+<h1>Categories</h1>
+
+<!-- TODO: add spacing after categories title -->
+<ul class="categories-toc-ul row">
     {% for category in site.data.category %}
     <div class="category-button-wrapper col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <li class="category-button">
@@ -23,8 +23,7 @@ title: Categories
         </li>
     </div>
     {% endfor %}
-    </ul>
-</div>
+</ul>
 
 
 <!-- Panel Version -->
@@ -48,28 +47,29 @@ title: Categories
 <div class="container-fluid category-list-container">
     {% for item in site.data.category %}
     <div id={{item.name | replace: ' ', '-' }} class="category-list">
-    <h3>{{ item.name }}</h3>
-    <p>{{ item.description }}</p>
-    <ul class="article-list">
-        {% assign filtered_posts = site.posts | where: 'category', item.name %}
-        {% for post in filtered_posts %}
-        <li>
-            <div class="category-list-item row">
-                <h4 class="category-list-article-title col-lg-9 col-md-8 col-sm-7 col-xs-7"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-                <div class="category-list-article-meta col-lg-3 col-md-4 col-sm-5 col-xs-5">
-                    {% assign author_name = site.authors | where: 'short_name', post.author | first %}
-                    {% if author_name %}
-                    <span class="category-list-article-author">by <a href="#">{{ author_name.name }}</a></span>
-                    {% endif %}
-                    <div class="category-list-article-date">{{ post.date | date: "%d %B, %Y" }}</div>
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <ul class="article-list">
+            {% assign filtered_posts = site.posts | where: 'category', item.name %}
+            {% for post in filtered_posts %}
+            <li>
+                <div class="category-list-item row">
+                    <h4 class="category-list-article-title col-lg-9 col-md-8 col-sm-7 col-xs-7"><a
+                            href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                        <div class="category-list-article-meta col-lg-3 col-md-4 col-sm-5 col-xs-5">
+                            {% assign author_name = site.authors | where: 'short_name', post.author | first %}
+                            {% if author_name %}
+                            <span class="category-list-article-author">by <a href="#">{{ author_name.name }}</a></span>
+                            {% endif %}
+                            <div class="category-list-article-date">{{ post.date | date: "%d %B, %Y" }}</div>
+                        </div>
+
                 </div>
-                
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="#" class="back-to-top-link">[Back To Top]</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="#" class="back-to-top-link">[Back To Top]</a>
     </div>
-    
+
     {% endfor %}
 </div>

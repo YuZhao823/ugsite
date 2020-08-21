@@ -1,0 +1,54 @@
+---
+title: Blog
+---
+<div class="container">
+    <h1>Blog</h1>
+    <nav>
+    <h3 class="page-number text-left bottom">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </h3>
+    </nav>
+    <ul class="post-excerpt-list">
+        {% for post in paginator.posts %}
+        
+            <li class="post-excerpt-item">    
+                <p class="post-date">
+                    {{ post.date | date: "%d %B, %Y" }}
+                </p>
+                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}"><h4>{{ post.title }}</h4></a>
+                <!-- post.excerpt is the first paragraph of content by default -->
+                {% assign author_name = site.authors | where: 'short_name', post.author | first %}
+                {% if author_name %}
+                <p class="post-author">{{ author_name.name }}</p>
+                {% endif %}
+                <p class="post-excerpt-content">{{ post.content_desc }}</p>
+                
+            </li>
+        
+       
+        <hr>
+        {% endfor %}
+    </ul>
+
+    <nav aria-label="pagination">
+      <p class="page-number text-center bottom">
+        You are currently on page {{ paginator.page }} of {{ paginator.total_pages }}
+      </p>
+      <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous"><a href="{{site.baseurl}}{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+        {% else %}
+        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next"><a href="{{site.baseurl}}{{ paginator.next_page_path }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+        {% else %}
+        <li class="next disabled"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+
+
+</div>
+

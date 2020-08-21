@@ -5,13 +5,12 @@ title: Questionnaires
 <h1>Questionnaire</h1>
 <ul class="questionaire-list">
     {% for questionnaire in site.questionnaires %}
-    <li>
-        <div><p>{{questionnaire.date | date: '%b %d, %Y' }}</p></div>
-        <h3>{{ questionnaire.title }}</h3>
-        <p>
-            {{questionnaire.author}}
-            {{questionnaire.content}}
-        </p>
+    <li class="questionaire-item">
+        <span class="questionaire-date">{{questionnaire.date | date: '%b %d, %Y' }}</span>
+        <span class="questionaire-creator">by {{questionnaire.author}}</span>
+        <h4 class="questionaire-heading">{{ questionnaire.title }}</h4>
+        {{questionnaire.content | markdownify }}
+        <a role="button" class="btn btn-primary" href="{{ questionnaire.link }}" target="_blank">Complete Survey</a>
         <hr />
     </li>
 {% endfor %}

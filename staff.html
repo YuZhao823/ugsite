@@ -8,14 +8,18 @@ title: Staff
         {% for author in site.authors %}
         <li class="staff-info col-lg-6 col-md-6 col-sm-6">
             <h3>{{ author.name }}</a></h3>
-            <!-- markdownify: convert md-formatted string into HTML -->
             <p>{{ author.content | markdownify }}</p>
             <h6 class="text-uppercase">Recent Posts<h6>
             {% assign filtered_posts = site.posts | where: 'author', author.short_name %}
+            {% if filtered_posts.size > 4 %}
+                {% assign limited_posts = filtered_posts | slice: 0, 4 %}
+            {% else %}
+                {% assign limited_posts = filtered_posts %}
+            {% endif %}
             <div class="row auto-clear">
-            {% for post in filtered_posts %}
+            {% for post in limited_posts %}
             <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <!-- TODO: only show 3 posts -->
+                <!-- only show 4 posts -->
                 <p class="staff-list-post-date">{{ post.date | date: "%d %B, %Y" }}</p>
                 <h5 class="staff-list-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
             </li>

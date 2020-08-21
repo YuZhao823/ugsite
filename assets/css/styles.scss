@@ -35,8 +35,10 @@ body {
 }
 
 // Bottom Bar
-.navbar.navbar-fixed-bottom {
+.navbar.bottom {
     background-color: #2D232E;
+    margin: 0;
+    border-radius: 0;
 }
 
 .navbar-text {
@@ -96,9 +98,18 @@ body {
     color:#4d4c4c;
 }
 
+.page-number.top {
+
+}
+
+.page-number.bottom {
+    color: #999
+}
+
 // Category  ===========================================================================
 .categories-toc-ul {
-    padding: 0;
+    list-style: none;
+    padding: 50px 0 0 0;
 }
 
 .category-button-wrapper {
@@ -156,12 +167,12 @@ body {
     padding-left: 0;
 }
 
-
-// @media only screen and (min-width: 991px) {
-//     .category-list-container {
-//         padding: 0 100px;
-//     }
-// }
+// TODO: use bootstrap class
+@media only screen and (min-width: 991px) {
+    .category-list-container {
+        padding: 0 100px;
+    }
+}
 
 .category-list-item {
     margin: 1em 0;
@@ -235,7 +246,27 @@ body {
     margin-top: 5px;
 }
 
-// Post / Article
+// Staff / Author ========================================================================================
+
+.author-posts {
+    list-style: none;
+    padding-left: 0;
+}
+
+.author-posts li {
+    margin-bottom: 10px;
+}
+
+.author-post-title {
+    font-size: 1.5em;
+}
+
+.author-post-date {
+    color: #888
+}
+
+
+// Post / Article ========================================================================================
 
 .article-categories {
     margin-top: 20px;
@@ -267,9 +298,24 @@ body {
     font-size: 18px;
 }
 
+
 // Questionaire ==========================================================================================
 
 .questionaire-list {
     list-style: none;
     padding-left: 0;
+}
+
+.questionaire-date {
+    color: #888;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.questionaire-creator {
+    color: #777
+}
+
+.questionaire-heading {
+    margin-top: 0;
 }

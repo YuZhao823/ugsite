@@ -2,7 +2,7 @@
 # Jekyll makes this data file available at site.data.navigation
 
 - name: Blog
-  link: /blog.html
+  link: /blog_paginator/index.html
 - name: Categories
   link: /categories.html
 - name: Staff

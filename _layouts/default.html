@@ -11,13 +11,13 @@
 </head>
 
 <body>
+  {% include navigation.html %}
   <div class="container">
-    {% include navigation.html %}
     {{ content }}
     <!-- content whitespace placeholder -->
     <div style="height: 70px;"></div>
-    {% include bottomNavigationBar.html %}
   </div>
+  {% include bottomNavigationBar.html %}
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
   <!-- Latest compiled and minified JavaScript -->
